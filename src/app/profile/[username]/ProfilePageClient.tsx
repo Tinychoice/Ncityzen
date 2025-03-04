@@ -26,7 +26,7 @@ import {
   FileTextIcon,
   HeartIcon,
   LinkIcon,
-  MapPinIcon,
+  MicVocalIcon,
 } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -55,7 +55,7 @@ function ProfilePageClient({
   const [editForm, setEditForm] = useState({
     name: user.name || "",
     bio: user.bio || "",
-    location: user.location || "",
+    fav_unit: user.fav_unit || "",
     website: user.website || "",
   });
 
@@ -147,12 +147,12 @@ function ProfilePageClient({
                   </Button>
                 )}
 
-                {/* LOCATION & WEBSITE */}
+                {/* fav_unit & WEBSITE */}
                 <div className="w-full mt-6 space-y-2 text-sm">
-                  {user.location && (
+                  {user.fav_unit && (
                     <div className="flex items-center text-muted-foreground">
-                      <MapPinIcon className="size-4 mr-2" />
-                      {user.location}
+                      <MicVocalIcon className="size-4 mr-2" />
+                      {user.fav_unit}
                     </div>
                   )}
                   {user.website && (
@@ -247,12 +247,12 @@ function ProfilePageClient({
                 />
               </div>
               <div className="space-y-2">
-                <Label>Location</Label>
+                <Label>fav_unit</Label>
                 <Input
-                  name="location"
-                  value={editForm.location}
-                  onChange={(e) => setEditForm({ ...editForm, location: e.target.value })}
-                  placeholder="Where are you based?"
+                  name="favorite unit"
+                  value={editForm.fav_unit}
+                  onChange={(e) => setEditForm({ ...editForm, fav_unit: e.target.value })}
+                  placeholder="What's your favorite unit of NCT?"
                 />
               </div>
               <div className="space-y-2">

@@ -6,7 +6,7 @@ import { getUserByClerkId } from "@/actions/user.actions";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Separator } from "./ui/separator";
-import { LinkIcon, MapPinIcon } from "lucide-react";
+import { LinkIcon, MicVocalIcon } from "lucide-react";
 
 async function Sidebar() {
   const authUser = await currentUser();
@@ -54,8 +54,8 @@ async function Sidebar() {
 
             <div className="w-full space-y-2 text-sm">
               <div className="flex items-center text-muted-foreground">
-                <MapPinIcon className="w-4 h-4 mr-2" />
-                {user.location || "No location"}
+                <MicVocalIcon className="w-4 h-4 mr-2" />
+                {user.fav_unit || "No favorite unit"}
               </div>
               <div className="flex items-center text-muted-foreground">
                 <LinkIcon className="w-4 h-4 mr-2 shrink-0" />

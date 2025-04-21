@@ -121,7 +121,7 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
                 variant="ghost"
                 size="sm"
                 className={`text-muted-foreground gap-2 ${
-                  hasLiked ? "text-red-500 hover:text-red-600" : "hover:text-red-500"
+                  hasLiked ? "text-[rgb(57,255,20)] hover:text-[rgb(57,255,20)]" : "hover:text-[rgb(57,255,20)]"
                 }`}
                 onClick={handleLike}
               >
@@ -144,11 +144,11 @@ function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground gap-2 hover:text-blue-500"
+              className="text-muted-foreground gap-2 hover:text-[rgb(152,255,152)]"
               onClick={() => setShowComments((prev) => !prev)}
             >
               <MessageCircleIcon
-                className={`size-5 ${showComments ? "fill-blue-500 text-blue-500" : ""}`}
+                className={`size-5 ${showComments ? "fill-[rgb(152,255,152)] text-[rgb(152,255,152)]" : ""}`}
               />
               <span>{post.comments.length}</span>
             </Button>

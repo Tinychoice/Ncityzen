@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
+// import { UploadButton } from "@/lib/uploadthing";
 
 type User = Awaited<ReturnType<typeof getProfileByUsername>>;
 type Posts = Awaited<ReturnType<typeof getUserPosts>>;
@@ -53,6 +54,7 @@ function ProfilePageClient({
   const [isUpdatingFollow, setIsUpdatingFollow] = useState(false);
 
   const [editForm, setEditForm] = useState({
+    image: user.image || "",
     name: user.name || "",
     bio: user.bio || "",
     fav_unit: user.fav_unit || "",
@@ -227,6 +229,28 @@ function ProfilePageClient({
               <DialogTitle>Edit Profile</DialogTitle>
             </DialogHeader>
             <div className="space-y-4 py-4">
+              {/* Upload de la photo de profil */}
+              {/* <div className="space-y-2">
+                <Label>Profile Picture</Label>
+                <div className="border rounded-lg p-4 flex flex-col items-center gap-3">
+                  {editForm.image && (
+                    <img
+                      src={editForm.image}
+                      alt="Profile Preview"
+                      className="w-16 h-16 rounded-full object-cover border"
+                    />
+                  )}
+                  <UploadButton
+                    endpoint="profileImage" // Assure-toi d'utiliser le bon endpoint
+                    onClientUploadComplete={(res) => {
+                      if (res && res.length > 0) {
+                        setEditForm({ ...editForm, image: res[0].fileUrl }); // Utilise `fileUrl`
+                      }
+                    }}
+                    onUploadError={(error) => alert(`Upload failed: ${error.message}`)}
+                  />
+                </div>
+              </div> */}
               <div className="space-y-2">
                 <Label>Name</Label>
                 <Input
